@@ -5,6 +5,9 @@ import lotterySIM
 from lotteries import LOTTERIES
 
 
+PORT = 5000
+HOST = "127.0.0.1"
+
 app = Flask(__name__)
 api = Api(app)
 # app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///database.db"
@@ -91,5 +94,5 @@ api.add_resource(Lottery, "/lottery/<string:id>")
 
 
 if __name__ == "__main__":
-    app.run(debug=True) 
+    app.run(host=HOST, port=PORT, debug=True)
     # pip install -r requirements.txt
